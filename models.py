@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 import json
 from sqlalchemy.sql.schema import PrimaryKeyConstraint
 
-from sqlalchemy.sql.sqltypes import Date
+from sqlalchemy.sql.sqltypes import Boolean, Date, Numeric
 
 database_path = os.environ['DATABASE_URL']
 
@@ -35,7 +35,7 @@ class Customer(db.Model):
   last_name = Column(String)
   address = Column(String)
   date_of_birth = Column(Date)
-  recieve_newsletter = Column(bool)
+  recieve_newsletter = Column(Boolean)
 
   orders = db.relationship("Order")
 
@@ -70,21 +70,21 @@ class Order(db.Model):
   name_long = Column(String)
   name_short = Column(String)
   molecules = Column(String)
-  price = Column(float) 
+  price = Column(Numeric) 
 
 '''
 CRUD functions for DB interaction
   defines functions in model scope
 '''
-def insert(model):
-  db.session.add(model)
+def insert(self):
+  db.session.add(self)
   db.session.commit()
 
 def update():
   db.session.commit()
 
-def delete(model):
-  db.session.delete(model)
+def delete(self):
+  db.session.delete(self)
   db.session.commit()
 
 
