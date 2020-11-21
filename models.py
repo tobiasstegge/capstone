@@ -2,8 +2,7 @@ import os
 from sqlalchemy import Column, String, Integer
 from flask_sqlalchemy import SQLAlchemy
 import json
-from sqlalchemy.sql.schema import PrimaryKeyConstraint
-
+from sqlalchemy.sql.schema import ForeignKey, PrimaryKeyConstraint
 from sqlalchemy.sql.sqltypes import Boolean, Date, Numeric
 
 database_path = os.environ['DATABASE_URL']
@@ -28,7 +27,7 @@ Model Customer
     Defines Table Customer
 '''
 class Customer(db.Model):
-  __tablename__ = 'Costumers'
+  __tablename__ = 'costumer'
 
   id = Column(Integer, primary_key=True)
   first_name = Column(String)
@@ -63,7 +62,7 @@ Model Customer
     Defines Table Customer
 '''
 class Order(db.Model):
-  __tablename__ = 'Orders'
+  __tablename__ = 'order'
 
   id = Column(Integer, primary_key=True)
   manufacturer = Column(String)
@@ -71,6 +70,8 @@ class Order(db.Model):
   name_short = Column(String)
   molecules = Column(String)
   price = Column(Numeric) 
+
+  customer_id = Column(Integer, ForeignKey('customer.id'))
 
 '''
 CRUD functions for DB interaction
