@@ -4,13 +4,40 @@
 
 This is the final project for dacity's Full Stack Web Development Nanodegree. It implements an examplary API for a shop with customers and orders. In a future development layout the data model and API endpoints should support more data and functionality, which is still to be implemented.
 
-##### Key Dependencies
+https://capstone-stegge.herokuapp.com
+
+## Key Project Dependencies
 
 - [Flask](http://flask.pocoo.org/)  is a lightweight backend microservices framework. Flask is required to handle requests and responses.
 
 - [SQLAlchemy](https://www.sqlalchemy.org/) is the Python SQL toolkit and ORM. As the underlying database a postgres will is used
 
 - [Flask-CORS](https://flask-cors.readthedocs.io/en/latest/#) is the extension used to handle cross origin requests from our frontend server. 
+
+## Local Development Instructions
+
+### Database Setup
+For local setup run the backend folder in terminal:
+```bash
+createdb shop
+```
+
+### Running the server
+
+Run the server from the correct directory, where app.py is located and enable the local virtual environment.
+
+To run the server, execute:
+
+```bash
+export FLASK_APP=app.py
+export FLASK_ENV=development
+flask run
+```
+
+Setting the `FLASK_ENV` variable to `development` will detect file changes and restart the server automatically.
+
+Setting the `FLASK_APP` variable to `app.py` directs flask to use the app.py application.
+
 
 ## API
 
@@ -73,34 +100,9 @@ Retrieve all the orders in the system.
 
 Creates a new order.
 
-
-## Database Setup
-For local setup run the backend folder in terminal:
-```bash
-createdb shop
-```
-
-## Running the server
-
-Run the server from the correct directory, where app.py is located and enable the local virtual environment.
-
-To run the server, execute:
-
-```bash
-export FLASK_APP=app.py
-export FLASK_ENV=development
-flask run
-```
-
-Setting the `FLASK_ENV` variable to `development` will detect file changes and restart the server automatically.
-
-Setting the `FLASK_APP` variable to `app.py` directs flask to use the app.py application.
-
-
 ## Testing
-To run the tests, run
+To tests the API, run
 ```
-dropdb capstone_test
 createdb capstone_test
 python test_app.py
 ```
