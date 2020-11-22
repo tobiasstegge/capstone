@@ -4,7 +4,7 @@
 
 This is the final project for dacity's Full Stack Web Development Nanodegree. It implements an examplary API for a shop with customers and orders. In a future development layout the data model and API endpoints should support more data and functionality, which is still to be implemented.
 
-https://capstone-stegge.herokuapp.com
+**HEROKU URL:** https://capstone-stegge.herokuapp.com
 
 ## Key Project Dependencies
 
