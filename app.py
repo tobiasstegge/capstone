@@ -1,9 +1,12 @@
 from os import curdir
 from models import Customer, Order, setup_db
 import os
-from flask import Flask, request, abort, jsonify
+from flask import Flask, request, abort, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
+
+from models import Customer, Order, setup_db
+from auth import AuthError, requires_auth
 
 
 def create_app(test_config=None):
@@ -15,14 +18,17 @@ def create_app(test_config=None):
 
 app = create_app()
 
-## ROUTES
+### ROUTES ###
 
 @app.route('/')
 def get_test():
-  return "API Working"
+  return render_template('/home.html')
 
-@app.route('/customers', methods=["GET"])
-def get_all_customers():
+
+# CUSTOMERS #
+@app.route('/customers', methods=['GET'])
+@requires_auth('get:customer')
+def get_all_customers(payload):
 
   customers = Customer.query.all()
 
@@ -31,8 +37,81 @@ def get_all_customers():
     'customers': [customer.format() for customer in customers]
   })
 
-@app.route('/orders', methods=["GET"])
-def get_all_orders():
+@app.route('/customers', methods=['POST'])
+@requires_auth('post:customer')
+def post_new_customer(payload):
+
+  body = request.get_json()
+
+  first_name = body.get('first_name')
+  last_name = body.get('last_name')
+  address = body.get('address')
+
+  if body.get('recieve_newsletter') == "true":
+    recieve_newsletter = True
+  else:
+    recieve_newsletter = False
+
+  new_customer = Customer(first_name=first_name, last_name=last_name, address=address, recieve_newsletter=recieve_newsletter)
+
+  new_customer.insert()
+  print("Inserted new customer")
+
+  return jsonify ({
+    'success': True,
+    'customer': new_customer.format()
+  })
+
+@app.route('/customers/<int:id>', methods=['PATCH'])
+@requires_auth('patch:customer')
+def patch_customer(payload, id):
+
+  customer = Customer.query.filter(Customer.id==id).one_or_none()
+
+  if customer is None:
+      abort(404)
+
+  body = request.get_json()
+
+  customer.first_name = body.get('first_name')
+  customer.last_name = body.get('last_name')
+  customer.address = body.get('address')
+
+  if body.get('recieve_newsletter') == "true":
+    customer.recieve_newsletter = True
+  else:
+    customer.recieve_newsletter = False
+
+  customer.update()
+  print('Updated customer')
+
+  return jsonify({
+      'success': True,
+      'customer': [customer.format()]
+  })
+
+@app.route('/customers/<int:id>', methods=['DELETE'])
+@requires_auth('delete:customer')
+def delete_customer(payload, id):
+
+    customer = Customer.query.filter(Customer.id==id).one_or_none()
+
+    if customer is None:
+        abort(404)
+
+    customer.delete()
+    print('Deleted customer')
+
+    return jsonify({
+        'success': True,
+        'delete': id
+    })
+
+
+# ORDERS #
+@app.route('/orders', methods=['GET'])
+@requires_auth('get:order')
+def get_all_orders(payload):
 
   orders = Order.query.all()
 
@@ -41,8 +120,59 @@ def get_all_orders():
     'orders': [order.format() for order in orders]
   })
 
+@app.route('/orders', methods=['POST'])
+@requires_auth('post:order')
+def post_new_order(payload):
+
+  body = request.get_json()
+
+  manufacturer = body.get('manufacturer')
+  name = body.get('name')
+  price = body.get('price')
+  customer_id = body.get('customer_id')
+
+  new_order = Order(manufacturer=manufacturer, name=name, price=price, customer_id=customer_id)
+
+  new_order.insert()
+  print("Inserted new order")
+
+  return jsonify ({
+    'success': True,
+    'customer': new_order.format()
+  })
 
 
+### Error Handling ###
+'''
+Example error handling for unprocessable entity
+'''
+@app.errorhandler(422)
+def unprocessable(error):
+    return jsonify({
+                    "success": False, 
+                    "error": 422,
+                    "message": "unprocessable"
+                    }), 422
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8080, debug=True)
+'''
+Example error handling for ressource not found 
+'''
+@app.errorhandler(404)
+def unprocessable(error):
+    return jsonify({
+                    "success": False, 
+                    "error": 404,
+                    "message": "resource not found"
+                    }), 404
+
+
+'''
+Error handler for AuthError
+'''
+@app.errorhandler(AuthError)
+def auth_error(e):
+    return jsonify({
+        "success": False,
+        "error": e.status_code,
+        "message": str(e.error) + " (authentification fails)"
+                    }), 401

@@ -1,0 +1,933 @@
+{
+	"info": {
+		"_postman_id": "7485805b-8358-4ba4-902a-f5db046780dd",
+		"name": "test-capstone-stegge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "public",
+			"item": [
+				{
+					"name": "/orders",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "05864b56-ebac-4fa7-83f1-abbf4feece48",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/orders",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/orders",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d1953f0c-2bd0-4e6f-91bc-96cfe3a0ad67",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"manufacturer\": \"healthtec\",\n    \"name\": \"Gute Pille\",\n    \"price\": 19.99,\n    \"customer_id\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/orders",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/customers/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "11113994-def4-42b1-ad9f-36833c2e5674",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/customers/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"customers",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/customers/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2d8f4c6f-a787-4c2b-8919-b3ea3519d47b",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"Tobi\",\n    \"last_name\": \"Stegge\",\n    \"address\": \"Tefghghfg, 62, Bremen\",\n    \"recieve_newsletter\": \"true\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/customers/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"customers",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/customers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "87c69413-530f-41b5-9e69-88e16e27a6a8",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"Tobi\",\n    \"last_name\": \"Stegge\",\n    \"address\": \"Teststwra0e, 62, Oldenburg\",\n    \"recieve_newsletter\": \"true\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/customers",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/customers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "df01fc67-9e8a-4d59-a470-176ff4c2fceb",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/customers",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"customers"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "/customers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3bb154d6-c6d1-4513-9d36-51d2be935cd4",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains customer array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.customers).to.be.an('array')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_admin}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/customers",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/orders",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "116c1dec-2ffa-4145-b3cd-a23e0820f003",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains order array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.orders).to.be.an('array')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_admin}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/orders",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/customers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f4cb4a75-dfbb-45aa-886b-18ae990947e2",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_admin}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"Tobi\",\n    \"last_name\": \"Steggemann\",\n    \"address\": \"Test Post, 62, Bremen\",\n    \"recieve_newsletter\": true\n}"
+						},
+						"url": {
+							"raw": "{{host}}/customers",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/orders",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d29cb96f-0fe6-484d-a956-04a9ce1d3c1b",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_admin}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"manufacturer\": \"healthtec\",\n    \"name\": \"Gute Pille\",\n    \"price\": 19.99,\n    \"customer_id\": 10\n}"
+						},
+						"url": {
+							"raw": "{{host}}/orders",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/customers/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "12042e48-c0e7-4d84-9c7a-6482335b5695",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains customer array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.customer).to.be.an('array')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_admin}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"Tobi\",\n    \"last_name\": \"Steggemann\",\n    \"address\": \"Test Patch, 62, Bremen\",\n    \"recieve_newsletter\": true\n}"
+						},
+						"url": {
+							"raw": "{{host}}/customers/4",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"customers",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/delete/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0f0e3c87-d559-4205-b2f3-92afcea55862",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_admin}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/customers/6",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"customers",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ik4wTkNOVEEzTWpaQ1FUa3lRMEl6TmtORk0wWXhRVFUwT1RFMFFVVkNSRUpDT1RBME1EUXpOUSJ9.eyJpc3MiOiJodHRwczovL3VkYWNpdHktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiZ29vZ2xlLW9hdXRoMnwxMDY3MTQ4MTQ0MTcwNjk3MTI4OTMiLCJhdWQiOlsiZGV2IiwiaHR0cHM6Ly91ZGFjaXR5LWZzbmQuYXV0aDAuY29tL3VzZXJpbmZvIl0sImlhdCI6MTU2MDg4OTU5NiwiZXhwIjoxNTYwODk2Nzk2LCJhenAiOiJPSjVwQk9ZSURFa09FVFVmUWo1ajdsSDZFTFcwMkd1MCIsInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6ZHJpbmtzIiwiZ2V0OmRyaW5rcyIsImdldDpkcmlua3MtZGV0YWlsIiwicGF0Y2g6ZHJpbmtzIiwicG9zdDpkcmlua3MiXX0.Qk-5FC2X_RUkK00WKARYCKw_877XFuaT5ND3f3ObD9Ly1e1GMfJXhi3McV12binGGCw6x241erIjGB0t8WbWdU3bYpIVD1klZ64DVLQ8Q2LQ2NzB3eFEOgGLL85az1jIDbRiuATIRbbBOWILPJ6h6KR9L5hExklf2zuj3Bnwm7zMRmVpIJmjrUt4bWjtTOguOwJ0IVQsk4PDjGxzwfrUWFCFNDqN_u15JNLxeH21C-QvCpHs3D4Aodeh1qFUuWHfK_Gyfu91AitXPTVZRX9eZbUOVkGT3JMn4sKn9oGaKFTx2E-Y4DmoECG0uWImbX_wiRjx4aTeo7Q7hKSReMToPA",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "ca7d78b1-de94-42e0-b09b-f6823592d5ea",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "a1695334-a130-4661-bcb7-b01864bc32be",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "/customers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d0983d11-b247-4965-bede-65f1ddb105e2",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains customer array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.customers).to.be.an('array')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_user}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/customers",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/orders",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4c0f16bc-cff3-4944-8dda-90de7d08d4ff",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains order array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.orders).to.be.an('array')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_user}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/orders",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/customers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e8d5b14b-3501-4099-ab0f-5ad611893de8",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_user}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"Tobi\",\n    \"last_name\": \"Steggemann\",\n    \"address\": \"Test Post, 62, Bremen\",\n    \"recieve_newsletter\": true\n}"
+						},
+						"url": {
+							"raw": "{{host}}/customers",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/orders",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4ee6a3bc-5f21-46cd-9dd0-b0b40f755cca",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_user}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"manufacturer\": \"healthtec\",\n    \"name\": \"Gute Pille\",\n    \"price\": 19.99,\n    \"customer_id\": 10\n}"
+						},
+						"url": {
+							"raw": "{{host}}/orders",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/customers/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5be93953-2a70-45ce-a6a4-522993c30e3a",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_user}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"Tobi\",\n    \"last_name\": \"Steggemann\",\n    \"address\": \"Test Patch, 62, Bremen\",\n    \"recieve_newsletter\": true\n}"
+						},
+						"url": {
+							"raw": "{{host}}/customers/4",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"customers",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/delete/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3cee37db-93c3-4ef5-9089-dce34d16e0ee",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_user}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/customers/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"customers",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ik4wTkNOVEEzTWpaQ1FUa3lRMEl6TmtORk0wWXhRVFUwT1RFMFFVVkNSRUpDT1RBME1EUXpOUSJ9.eyJpc3MiOiJodHRwczovL3VkYWNpdHktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiZ29vZ2xlLW9hdXRoMnwxMDY3MTQ4MTQ0MTcwNjk3MTI4OTMiLCJhdWQiOlsiZGV2IiwiaHR0cHM6Ly91ZGFjaXR5LWZzbmQuYXV0aDAuY29tL3VzZXJpbmZvIl0sImlhdCI6MTU2MDg4OTU5NiwiZXhwIjoxNTYwODk2Nzk2LCJhenAiOiJPSjVwQk9ZSURFa09FVFVmUWo1ajdsSDZFTFcwMkd1MCIsInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6ZHJpbmtzIiwiZ2V0OmRyaW5rcyIsImdldDpkcmlua3MtZGV0YWlsIiwicGF0Y2g6ZHJpbmtzIiwicG9zdDpkcmlua3MiXX0.Qk-5FC2X_RUkK00WKARYCKw_877XFuaT5ND3f3ObD9Ly1e1GMfJXhi3McV12binGGCw6x241erIjGB0t8WbWdU3bYpIVD1klZ64DVLQ8Q2LQ2NzB3eFEOgGLL85az1jIDbRiuATIRbbBOWILPJ6h6KR9L5hExklf2zuj3Bnwm7zMRmVpIJmjrUt4bWjtTOguOwJ0IVQsk4PDjGxzwfrUWFCFNDqN_u15JNLxeH21C-QvCpHs3D4Aodeh1qFUuWHfK_Gyfu91AitXPTVZRX9eZbUOVkGT3JMn4sKn9oGaKFTx2E-Y4DmoECG0uWImbX_wiRjx4aTeo7Q7hKSReMToPA",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "4188cf92-e588-4e8d-9cd2-a6fc3df3e031",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "e80cd946-c93d-4745-a870-374677e21695",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "06a6f166-8683-4f52-a898-3a2853c0cde1",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "be047497-be4e-4973-9c28-69db5d0a6413",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "eb11077f-77bd-411b-a58c-301e6e11b990",
+			"key": "host",
+			"value": "localhost:5000"
+		},
+		{
+			"id": "f7aab49b-2de6-4378-8766-1487f24e0419",
+			"key": "jwt_user",
+			"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IndaRFpKQTZpM2Vwd3dMeVE5X05pRyJ9.eyJpc3MiOiJodHRwczovL3NhdmVzdGVnZ2UuZXUuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVmYmFiODNlNDQ4OTRhMDA2ODA0NmI2NiIsImF1ZCI6Imh0dHBzOi8vY2Fwc3RvbmUtc3RlZ2dlLXRlc3QvIiwiaWF0IjoxNjA2MDcyNDQ4LCJleHAiOjE2MDYxNTg4NDgsImF6cCI6Ik1SdjEwWkhjZmgxMjF5V0E3b3VwUWRwM1VJZDVDZTV1Iiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJnZXQ6Y3VzdG9tZXIiLCJnZXQ6b3JkZXIiXX0.VKQ-xnmo6W0Hbe4c62F4yfZ_foX7s0e3EoZnqc8dVNMnEVUFX1HRN7xCitOEjG6juTJBf2keflbOGlfmeU2Kau6dsF_Rl56i8R_yGWCZ_EpbQsc4w_cdcJtQYax_ymz4Phhazdop3UMTYMr5a84mFQGRtIzb6qWm5jVXjGT6Yl3ADAglyj93FTtmfpCbDwVWqgIcgYDUaNqZsXlvJ5MeHiu_g3rdFVbNTtuB3BQmPu1f6kJS6z69twvfJKq8r3tl57ZdY96y-bfXG-FcHdAxd70XUzIbBs6PiltkLdYLbquHNLeaVDu9nEkVbfaQc9LJtcGFC4SttwbTHvH4BvORGA"
+		},
+		{
+			"id": "e7208b4c-5847-46e5-90a1-f0b7d1e8f096",
+			"key": "jwt_admin",
+			"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IndaRFpKQTZpM2Vwd3dMeVE5X05pRyJ9.eyJpc3MiOiJodHRwczovL3NhdmVzdGVnZ2UuZXUuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVmYmFiMWY3YWZkNzU5MDA2ZTIyYjgyMSIsImF1ZCI6Imh0dHBzOi8vY2Fwc3RvbmUtc3RlZ2dlLXRlc3QvIiwiaWF0IjoxNjA2MDcxMTI1LCJleHAiOjE2MDYxNTc1MjUsImF6cCI6Ik1SdjEwWkhjZmgxMjF5V0E3b3VwUWRwM1VJZDVDZTV1Iiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6Y3VzdG9tZXIiLCJnZXQ6Y3VzdG9tZXIiLCJnZXQ6b3JkZXIiLCJwYXRjaDpjdXN0b21lciIsInBvc3Q6Y3VzdG9tZXIiLCJwb3N0Om9yZGVyIl19.SQlarPNEwg7dfbY6rIPNg7TZ9C5fPZGIA_zs5TTQ_sABg0Cswfli24s_S4FffK29imJdLkxxDF4kzT7fg1BI6a4RhXtEn1gDJBMlVwPpTxkMmf9scO0fceyF8XVcPw67Hsb4Oc0K8j2IqVOkrxtGcy22QSq9p8G427BSreIht_Z7ItBqDpBq7vmN78TLFVuKYdX9Eoy34x0XSmK6wyba5zb153sO9hYqZe1aA-ib_L7P8n1E1-4M6vvqHgMRJfJ7VleUBRJvVP3nII1ZDGqdkxt1ockXaC9V_EFhf7zlu7zSLlpDdIN4cmrsg_jAv7RmA4Lh-_cmDdTwTJVhDTFO2g"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

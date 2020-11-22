@@ -7,7 +7,7 @@ from urllib.request import urlopen
 
 AUTH0_DOMAIN = 'savestegge.eu.auth0.com'
 ALGORITHMS = ['RS256']
-API_AUDIENCE = 'https://coffee-api/'
+API_AUDIENCE = 'https://capstone-stegge-test/'
 
 ## AuthError Exception
 '''
