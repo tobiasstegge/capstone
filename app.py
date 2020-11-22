@@ -143,9 +143,7 @@ def post_new_order(payload):
 
 
 ### Error Handling ###
-'''
-Example error handling for unprocessable entity
-'''
+
 @app.errorhandler(422)
 def unprocessable(error):
     return jsonify({
@@ -154,9 +152,6 @@ def unprocessable(error):
                     "message": "unprocessable"
                     }), 422
 
-'''
-Example error handling for ressource not found 
-'''
 @app.errorhandler(404)
 def unprocessable(error):
     return jsonify({
@@ -165,10 +160,14 @@ def unprocessable(error):
                     "message": "resource not found"
                     }), 404
 
+@app.errorhandler(401)
+def unauthorized(error):
+    return jsonify({
+                  "success": False,
+                   "error": 401,
+                   "message": "unauthorized"
+                   }), 401
 
-'''
-Error handler for AuthError
-'''
 @app.errorhandler(AuthError)
 def auth_error(e):
     return jsonify({
