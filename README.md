@@ -69,7 +69,7 @@ They have the following permissions:
 
 ## Endpoints
 
-_Examples on how to use all endpoints can be found in the provided provided a [Postman Collection]()._
+_Examples on how to use all endpoints can be found in the provided provided a [Postman Collection](https://github.com/tobiasstegge/capstone/blob/main/test-capstone-stegge.postman_collection.json)._
 
 ### Customers
 
@@ -101,8 +101,15 @@ Retrieve all the orders in the system.
 Creates a new order.
 
 ## Testing
+
+### Local
+
 To tests the API, run
 ```
 createdb capstone_test
 python test_app.py
 ```
+
+### Heroku
+
+For testing in Heroku the [Postman Collection](https://github.com/tobiasstegge/capstone/blob/main/test-capstone-stegge.postman_collection.json) can be used. Here the required JWT's can be found as a saved variable. 
