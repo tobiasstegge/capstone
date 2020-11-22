@@ -31,6 +31,18 @@ def get_all_customers():
     'customers': [customer.format() for customer in customers]
   })
 
+@app.route('/orders', methods=["GET"])
+def get_all_orders():
+
+  orders = Order.query.all()
+
+  return jsonify ({
+    'success': True,
+    'orders': [order.format() for order in orders]
+  })
+
+
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080, debug=True)

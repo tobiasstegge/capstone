@@ -27,7 +27,6 @@ def get_token_auth_header():
     """
     Copied from app.py in BasicFlaskAuth
     """
-
     auth = request.headers.get('Authorization', None)
 
     if not auth:
