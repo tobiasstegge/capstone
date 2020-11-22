@@ -15,7 +15,7 @@ class TestCase(unittest.TestCase):
 
   ### SETUP ###
   def setUp(self):
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://tobiassteggemann1@localhost:5432/shop'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://tobiassteggemann1@localhost:5432/capstone_test'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     
     self.client = app.test_client()
