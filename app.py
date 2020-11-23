@@ -19,7 +19,7 @@ def create_app(test_config=None):
 
 app = create_app()
 
-### ROUTES ###
+# ROUTES
 
 
 @app.route('/')
@@ -27,7 +27,7 @@ def get_test():
     return render_template('/home.html')
 
 
-# CUSTOMERS #
+# CUSTOMERS
 @app.route('/customers', methods=['GET'])
 @requires_auth('get:customer')
 def get_all_customers(payload):
@@ -114,7 +114,7 @@ def delete_customer(payload, id):
     })
 
 
-# ORDERS #
+# ORDERS
 @app.route('/orders', methods=['GET'])
 @requires_auth('get:order')
 def get_all_orders(payload):
@@ -150,7 +150,7 @@ def post_new_order(payload):
     })
 
 
-### Error Handling ###
+# Error Handling
 @app.errorhandler(422)
 def unprocessable(error):
     return jsonify({
